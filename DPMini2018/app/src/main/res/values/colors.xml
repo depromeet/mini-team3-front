@@ -3,5 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="gray_d8">#d8d8d8</color>
+    <color name="blue_10">#1A26a9df</color>
+    <color name="blue_23">#2396ff</color>
+    <color name="grey_4e">#4e4e4e</color>
+    <color name="grey_6">#666666</color>
+    <color name="black">#000000</color>
+    <color name="bg_survey_title">#313b45</color>
+    <color name="diary_red">#f35447</color>
 </resources>
