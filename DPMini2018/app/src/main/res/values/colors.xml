@@ -12,4 +12,5 @@
     <color name="black">#000000</color>
     <color name="bg_survey_title">#313b45</color>
     <color name="diary_red">#f35447</color>
+    <color name="gray_9b">#9b9b9b</color>
 </resources>

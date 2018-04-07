@@ -4,8 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -13,12 +12,11 @@ import butterknife.OnClick;
 import dp.minipj.dpmini2018.R;
 
 public class LoginActivity extends AppCompatActivity {
-  @BindView(R.id.login_logo_img) ImageView loginLogoImg;
-  @BindView(R.id.login_email_et) EditText loginEmailEt;
-  @BindView(R.id.login_pw_et) EditText loginPwEt;
-  @BindView(R.id.login_btn) ImageButton loginBtn;
-  @BindView(R.id.login_content_layout) RelativeLayout loginContentLayout;
-  @BindView(R.id.signup_btn) ImageButton signupBtn;
+
+  @BindView(R.id.edit_email) EditText editEmail;
+  @BindView(R.id.edit_password) EditText editPassword;
+  @BindView(R.id.button_login) ImageButton buttonLogin;
+  @BindView(R.id.text_sign_up) TextView textSignUp;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +25,11 @@ public class LoginActivity extends AppCompatActivity {
     ButterKnife.bind(this);
   }
 
-  @OnClick(R.id.login_btn) void onLoginButtonClicked() {
+  @OnClick(R.id.button_login) void onLoginButtonClicked() {
     startActivity(MainActivity.intent(this));
   }
 
-  @OnClick(R.id.signup_btn) void onSignUpButtonClicked() {
+  @OnClick(R.id.text_sign_up) void onSignUpTextClicked() {
     startActivity(SignUpActivity.intent(this));
   }
 }
