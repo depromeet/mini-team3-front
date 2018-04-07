@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dp.minipj.dpmini2018.MainActivity">
+    tools:context="dp.minipj.dpmini2018.activity.MainActivity">
 
     <RelativeLayout
         android:layout_width="0dp"
@@ -49,15 +49,15 @@
             android:layout_marginTop="46dp"
             android:layout_centerHorizontal="true" />
         
-        <android.support.v7.app.AlertController.RecycleListView
-            android:layout_width="match_parent"
-            android:id="@+id/main_rv"
-            android:layout_height="300dp"
-            android:layout_below="@id/main_day_tv"
-            android:layout_marginTop="20dp">
+       <android.support.v7.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="300dp"
+           android:layout_below="@id/main_day_tv"
+           android:layout_marginTop="30dp"
+           android:id="@+id/main_rv">
 
 
-        </android.support.v7.app.AlertController.RecycleListView>
+       </android.support.v7.widget.RecyclerView>
         
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

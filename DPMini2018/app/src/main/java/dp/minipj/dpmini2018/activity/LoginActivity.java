@@ -1,32 +1,36 @@
 package dp.minipj.dpmini2018.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import dp.minipj.dpmini2018.R;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText email_et;
-    private EditText pw_et;
-    private ImageButton signIn_btn;
-    private ImageButton signUp_btn;
+    @BindView(R.id.login_logo_img)
+    ImageView loginLogoImg;
+    @BindView(R.id.login_email_et)
+    EditText loginEmailEt;
+    @BindView(R.id.login_pw_et)
+    EditText loginPwEt;
+    @BindView(R.id.login_btn)
+    ImageButton loginBtn;
+    @BindView(R.id.login_content_layout)
+    RelativeLayout loginContentLayout;
+    @BindView(R.id.signup_btn)
+    ImageButton signupBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
-        /////
-        email_et = (EditText)findViewById(R.id.login_email_et);
-        pw_et = (EditText)findViewById(R.id.login_pw_et);
-        signIn_btn = (ImageButton)findViewById(R.id.login_btn);
-        signUp_btn = (ImageButton)findViewById(R.id.signup_btn);
-        /////
-
-        String userEmail = email_et.getText().toString();
-        String userPW = pw_et.getText().toString();
 
     }
 }
