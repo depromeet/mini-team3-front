@@ -5,4 +5,5 @@
     <string name="signup_nickname">Nick name</string>
     <string name="signup_phone">Phone</string>
     <string name="signup_password">password</string>
+    <string name="login_please_sign_up">First time here? Sign up!</string>
 </resources>

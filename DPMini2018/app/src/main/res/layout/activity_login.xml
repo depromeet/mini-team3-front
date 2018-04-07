@@ -6,80 +6,60 @@
     android:layout_height="match_parent"
     tools:context="dp.minipj.dpmini2018.activity.LoginActivity">
 
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="116dp"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/gray_9b"
+        android:textSize="14sp"
+        android:theme="@style/Widget.EditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:id="@+id/login_content_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/edit_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="26dp"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/gray_9b"
+        android:textSize="14sp"
+        android:theme="@style/Widget.EditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_email" />
 
-            <ImageView
-                android:id="@+id/login_logo_img"
-                android:layout_width="34dp"
-                android:layout_height="56dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/logo" />
+    <ImageButton
+        android:id="@+id/button_login"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/edit_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/btn_sign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_password" />
 
-            <EditText
-                android:id="@+id/login_email_et"
-                android:layout_width="280dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/login_logo_img"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="80dp"
-                android:inputType="textEmailAddress"
-                android:text="E-mail"
-                android:textColor="#9b9b9b"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/login_pw_et"
-                android:layout_width="280dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/login_email_et"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:inputType=""
-                android:text="password"
-                android:textColor="#9b9b9b"
-                android:textSize="14sp" />
-
-            <ImageButton
-                android:id="@+id/login_btn"
-                android:layout_width="290dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/login_pw_et"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/group" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
-
-            <ImageButton
-                android:id="@+id/signup_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:scaleType="fitXY"
-                android:src="@drawable/footer_signup" />
-
-        </RelativeLayout>
-    </RelativeLayout>
-
+    <TextView
+        android:id="@+id/text_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/login_please_sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_login" />
 </android.support.constraint.ConstraintLayout>
