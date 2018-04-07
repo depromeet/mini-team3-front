@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import dp.minipj.dpmini2018.R;
 
-public class Splash extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private Intent intent;
 

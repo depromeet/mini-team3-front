@@ -1,5 +1,6 @@
 package dp.minipj.dpmini2018.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
@@ -29,5 +30,9 @@ public class SignUpActivity extends AppCompatActivity {
 
   @OnClick(R.id.button_signup) void onSignInClicked() {
 
+  }
+
+  public static Intent intent(AppCompatActivity activity) {
+    return new Intent(activity, SignUpActivity.class);
   }
 }

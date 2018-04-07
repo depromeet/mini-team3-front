@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dp.minipj.dpmini2018.activity.Splash">
+    tools:context="dp.minipj.dpmini2018.activity.SplashActivity">
     
     <RelativeLayout
         android:layout_width="0dp"
