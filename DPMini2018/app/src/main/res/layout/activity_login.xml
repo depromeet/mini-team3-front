@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dp.minipj.dpmini2018.activity.LoginActivity">
+    
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
+        android:id="@+id/login_layout">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="56dp"
+                android:id="@+id/login_logo_img"
+                android:src="@drawable/logo"
+                android:layout_centerHorizontal="true"/>
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="80dp"
+                android:id="@+id/login_email_et"
+                android:text="E-mail"
+                android:textColor="#9b9b9b"
+                android:textSize="14sp"
+                android:layout_below="@id/login_logo_img"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:text="password"
+                android:textColor="#9b9b9b"
+                android:textSize="14sp"
+                android:layout_below="@id/login_email_et"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/login_pw_et"/>
+
+            <ImageButton
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:layout_below="@id/login_pw_et"
+                android:src="@drawable/group"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/login_btn"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
