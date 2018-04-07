@@ -19,7 +19,6 @@ public class SignUpActivity extends AppCompatActivity {
   @BindView(R.id.edit_phone) EditText editPhone;
   @BindView(R.id.edit_password) EditText editPassword;
   @BindView(R.id.button_signup) ImageView buttonSignup;
-  @BindView(R.id.layout_button) RelativeLayout layoutButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
