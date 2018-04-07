@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DPMini2018</string>
+    <string name="sign_up_button">Don’t have an account? Sign up</string>
 </resources>
