@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
     layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
     recyclerView.setLayoutManager(layoutManager);
 
+    recyclerAdapter = new RecyclerAdapter(data);
+    recyclerView.setAdapter(recyclerAdapter);
+    makeDummy();
+
   }
 
 
@@ -60,18 +65,18 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
-  class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
+  static class RecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> {
+    public static final String TAG = RecyclerAdapter.class.getSimpleName();
 
-    ArrayList<MainResult> mainLists;
+    List<MainResult> mainLists;
 
     public RecyclerAdapter(ArrayList<MainResult> mainLists) {
       this.mainLists = mainLists;
     }
 
-    public void setAdapter(ArrayList<MainResult> mainLists) {
+    public void setAdapter(List<MainResult> mainLists) {
       this.mainLists = mainLists;
       notifyDataSetChanged();
-      ;
     }
 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -82,12 +87,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-      MainResult mainList = mainLists.get(position);
+      MainResult mainResult = mainLists.get(position);
 
+      Log.i(TAG, "onBindViewHolder: " + holder.mDay);
+      Log.i(TAG, "onBindViewHolder: " + mainResult.day);
       holder.mDay.setText(mainLists.get(position).day);
       holder.mDate.setText(mainLists.get(position).date);
-      Glide.with(getApplicationContext())
-          .load(mainList.img)
+      Glide.with(holder.mImg.getContext())
+          .load(mainResult.img)
           .into(holder.mImg);
     }
 
@@ -97,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
-  class MyViewHolder extends RecyclerView.ViewHolder {
+  static class MyViewHolder extends RecyclerView.ViewHolder {
 
     private TextView mDay; // 날짜
     private TextView mDate; // 요일
