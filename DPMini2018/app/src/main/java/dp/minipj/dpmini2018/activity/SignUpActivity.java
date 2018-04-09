@@ -11,6 +11,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dp.minipj.dpmini2018.R;
+import dp.minipj.dpmini2018.TripApps;
+import dp.minipj.dpmini2018.models.SignUpRequest;
+import dp.minipj.dpmini2018.network.Api;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class SignUpActivity extends AppCompatActivity {
   @BindView(R.id.image_profile) ImageView imageProfile;
@@ -28,6 +33,19 @@ public class SignUpActivity extends AppCompatActivity {
   }
 
   @OnClick(R.id.button_signup) void onSignInClicked() {
+    TripApps.getInstance().api()
+        .user()
+        .signUp(new SignUpRequest(
+            editEmails.getText().toString(), "", editNickname.getText().toString(),
+            editPassword.getText().toString(), editPhone.getText().toString()))
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(
+            () -> finish(),
+            e -> {
+
+            }
+        );
 
   }
 
