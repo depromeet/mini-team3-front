@@ -1,22 +1,24 @@
-package dp.minipj.dpmini2018.models;
+package dp.minipj.dpmini.models;
 
-public class SignInResponse {
+import java.io.Serializable;
+
+public class SignUpRequest implements Serializable {
 
   private String email;
   private String image;
   private String nickname;
+  private String password;
   private String phone;
-  private Long userId;
 
-  public SignInResponse() {
+  public SignUpRequest() {
   }
 
-  public SignInResponse(String email, String image, String nickname, String phone, Long userId) {
+  public SignUpRequest(String email, String image, String nickname, String password, String phone) {
     this.email = email;
     this.image = image;
     this.nickname = nickname;
+    this.password = password;
     this.phone = phone;
-    this.userId = userId;
   }
 
   public String getEmail() {
@@ -43,19 +45,19 @@ public class SignInResponse {
     this.nickname = nickname;
   }
 
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
   public String getPhone() {
     return phone;
   }
 
   public void setPhone(String phone) {
     this.phone = phone;
-  }
-
-  public Long getUserId() {
-    return userId;
-  }
-
-  public void setUserId(Long userId) {
-    this.userId = userId;
   }
 }

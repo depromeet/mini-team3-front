@@ -1,4 +1,4 @@
-package dp.minipj.dpmini2018.activity;
+package dp.minipj.dpmini.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,15 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import dp.minipj.dpmini2018.R;
-import dp.minipj.dpmini2018.TripApps;
-import dp.minipj.dpmini2018.models.SignUpRequest;
-import dp.minipj.dpmini2018.network.Api;
+import dp.minipj.dpmini.R;
+import dp.minipj.dpmini.TripApps;
+import dp.minipj.dpmini.models.SignUpRequest;
+import dp.minipj.dpmini.network.Api;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -25,6 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
   @BindView(R.id.edit_password) EditText editPassword;
   @BindView(R.id.button_signup) ImageView buttonSignup;
 
+  CompositeDisposable compositeDisposable = new CompositeDisposable();
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -33,7 +38,7 @@ public class SignUpActivity extends AppCompatActivity {
   }
 
   @OnClick(R.id.button_signup) void onSignInClicked() {
-    TripApps.getInstance().api()
+    Disposable disposable = TripApps.getInstance().api()
         .user()
         .signUp(new SignUpRequest(
             editEmails.getText().toString(), "", editNickname.getText().toString(),
@@ -43,10 +48,16 @@ public class SignUpActivity extends AppCompatActivity {
         .subscribe(
             () -> finish(),
             e -> {
-
+              e.printStackTrace();
+              Toast.makeText(this, "에러가 발생했습니다 : " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         );
+    compositeDisposable.add(disposable);
+  }
 
+  @Override protected void onDestroy() {
+    super.onDestroy();
+    compositeDisposable.dispose();
   }
 
   public static Intent intent(AppCompatActivity activity) {

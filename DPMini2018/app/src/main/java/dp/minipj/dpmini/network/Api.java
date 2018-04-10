@@ -1,4 +1,4 @@
-package dp.minipj.dpmini2018.network;
+package dp.minipj.dpmini.network;
 
 public enum Api {
   INSTANCE;

@@ -18,7 +18,6 @@
     </style>
 
     <style name="Widget.EditText">
-        <!-- TODO color 값 ANA 요청 -->
         <item name="colorControlActivated">@color/blue_23</item>
         <item name="colorControlNormal">@color/gray_d8</item>
         <item name="android:textCursorDrawable">@color/blue_23</item>

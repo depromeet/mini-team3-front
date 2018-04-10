@@ -1,8 +1,8 @@
-package dp.minipj.dpmini2018;
+package dp.minipj.dpmini;
 
 import android.app.Application;
 
-import dp.minipj.dpmini2018.network.Api;
+import dp.minipj.dpmini.network.Api;
 
 public class TripApps extends Application {
   private static TripApps apps;

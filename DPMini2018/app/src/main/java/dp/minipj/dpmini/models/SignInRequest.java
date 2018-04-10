@@ -1,4 +1,4 @@
-package dp.minipj.dpmini2018.models;
+package dp.minipj.dpmini.models;
 
 public class SignInRequest {
   private String email;

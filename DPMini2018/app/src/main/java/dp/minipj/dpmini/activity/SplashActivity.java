@@ -1,11 +1,11 @@
-package dp.minipj.dpmini2018.activity;
+package dp.minipj.dpmini.activity;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import dp.minipj.dpmini2018.R;
+import dp.minipj.dpmini.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -19,13 +19,10 @@ public class SplashActivity extends AppCompatActivity {
         intent = new Intent(getApplicationContext(), LoginActivity.class);
 
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        handler.postDelayed(() -> {
 
-                startActivity(intent);
-                finish();
-            }
+            startActivity(intent);
+            finish();
         }, 3000); // splash 3초
     }
 }

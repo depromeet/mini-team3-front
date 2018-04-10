@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dp.minipj.dpmini2018.activity.MainActivity">
+    tools:context="dp.minipj.dpmini.activity.MainActivity">
 
     <RelativeLayout
         android:layout_width="0dp"

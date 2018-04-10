@@ -1,12 +1,13 @@
-package dp.minipj.dpmini2018.network;
+package dp.minipj.dpmini.network;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
-import dp.minipj.dpmini2018.BuildConfig;
+import dp.minipj.dpmini.BuildConfig;
 import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitFactory {
 
@@ -28,6 +29,7 @@ public class RetrofitFactory {
     return new Retrofit.Builder()
         .baseUrl(BuildConfig.SERVER_URL)
         .client(client)
+        .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build();
   }
