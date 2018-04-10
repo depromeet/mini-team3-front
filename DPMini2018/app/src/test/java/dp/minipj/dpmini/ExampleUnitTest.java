@@ -1,4 +1,4 @@
-package dp.minipj.dpmini2018;
+package dp.minipj.dpmini;
 
 import org.junit.Test;
 

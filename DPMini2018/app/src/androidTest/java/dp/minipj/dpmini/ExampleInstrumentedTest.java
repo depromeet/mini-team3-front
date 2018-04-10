@@ -1,4 +1,4 @@
-package dp.minipj.dpmini2018;
+package dp.minipj.dpmini;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

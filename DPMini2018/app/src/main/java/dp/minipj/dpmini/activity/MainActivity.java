@@ -1,4 +1,4 @@
-package dp.minipj.dpmini2018.activity;
+package dp.minipj.dpmini.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dp.minipj.dpmini2018.R;
+import dp.minipj.dpmini.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public static Intent intent(AppCompatActivity activity) {
-    return new Intent(activity, MainActivity.class);
+    Intent intent = new Intent(activity, MainActivity.class);
+    return Intent.makeRestartActivityTask(intent.getComponent());
   }
 }
