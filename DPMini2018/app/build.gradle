@@ -10,7 +10,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "dp.minipj.dpmini2018"
+        applicationId "dp.minipj.dpmini"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
@@ -36,11 +36,11 @@ android {
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:appcompat-v7:25.4.0'
-    implementation 'com.android.support:recyclerview-v7:25.4.0'
-    implementation "com.android.support:design:25.4.0"
-    implementation "com.android.support:support-v4:25.4.0"
-    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support:recyclerview-v7:25.3.1'
+    implementation "com.android.support:design:25.3.1"
+    implementation "com.android.support:support-v4:25.3.1"
+    implementation 'com.github.bumptech.glide:glide:3.6.1'
 
     implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"

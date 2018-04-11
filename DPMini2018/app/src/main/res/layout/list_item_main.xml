@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="283dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginEnd="5dp"
+    android:layout_marginStart="5dp">
 
     <ImageView
+        android:id="@+id/item_main_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/item_main_img"/>
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:layout_marginLeft="30dp">
+        android:layout_marginTop="22dp">
 
         <TextView
-            android:textColor="@android:color/white"
+            android:id="@+id/item_main_day_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/item_main_day_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="28dp"
             android:text="7"
-            android:textSize="34sp"
-            android:layout_centerHorizontal="true"/>
+            android:textColor="@android:color/white"
+            android:textSize="34sp" />
 
         <TextView
             android:id="@+id/item_main_date_tv"
-            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/item_main_day_tv"
+            android:layout_marginStart="24dp"
             android:text="SAT"
-            android:layout_below="@id/item_main_day_tv"/>
+            android:textColor="@android:color/white" />
 
     </RelativeLayout>
 

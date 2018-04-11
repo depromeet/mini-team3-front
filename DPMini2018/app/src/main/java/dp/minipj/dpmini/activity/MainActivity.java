@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import com.bumptech.glide.Glide;
 
@@ -22,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dp.minipj.dpmini.R;
-import dp.minipj.dpmini2018.models.MainResult;
+import dp.minipj.dpmini.models.MainResult;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
     recyclerView = (RecyclerView) findViewById(R.id.main_rv);
     layoutManager = new LinearLayoutManager(this);
     layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+    SnapHelper snapHelper = new PagerSnapHelper();
     recyclerView.setLayoutManager(layoutManager);
+    snapHelper.attachToRecyclerView(recyclerView);
 
     recyclerAdapter = new RecyclerAdapter(data);
     recyclerView.setAdapter(recyclerAdapter);
@@ -61,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
   private void makeDummy() {
     data.add(new MainResult("8", "MON", "R.drawable.rectalgle_3"));
-    data.add(new MainResult("9", "Tus", "R.drawable.rectalgle_3"));
+    data.add(new MainResult("9", "TUS", "R.drawable.rectalgle_3"));
+    data.add(new MainResult("10", "WED", "R.drawable.rectalgle_3"));
+    data.add(new MainResult("11", "THU", "R.drawable.rectalgle_3"));
   }
 
 
@@ -70,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<MainResult> mainLists;
 
-    public RecyclerAdapter(ArrayList<MainResult> mainLists) {
+    public RecyclerAdapter(List<MainResult> mainLists) {
       this.mainLists = mainLists;
     }
 
@@ -95,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
       holder.mDate.setText(mainLists.get(position).date);
       Glide.with(holder.mImg.getContext())
           .load(mainResult.img)
+          .placeholder(R.drawable.rectangle_3)
           .into(holder.mImg);
     }
 
@@ -113,9 +120,9 @@ public class MainActivity extends AppCompatActivity {
     public MyViewHolder(View itemView) {
       super(itemView);
 
-      mDay = (TextView) findViewById(R.id.item_main_day_tv);
-      mDate = (TextView) findViewById(R.id.item_main_date_tv);
-      mImg = (ImageView) findViewById(R.id.item_main_img);
+      mDay = (TextView) itemView.findViewById(R.id.item_main_day_tv);
+      mDate = (TextView) itemView.findViewById(R.id.item_main_date_tv);
+      mImg = (ImageView) itemView.findViewById(R.id.item_main_img);
     }
   }
 
